@@ -20,3 +20,15 @@ C:\Users\programacion\Documents\CentralTelefonica-master\obj\Debug\netcoreapp2.2
 C:\Users\programacion\Documents\CentralTelefonica-master\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfo.cs
 C:\Users\programacion\Documents\CentralTelefonica-master\obj\Debug\netcoreapp2.2\CentralTelefonica.dll
 C:\Users\programacion\Documents\CentralTelefonica-master\obj\Debug\netcoreapp2.2\CentralTelefonica.pdb
+C:\Users\Programacion\Documents\FTorres\Llamada\obj\Debug\netcoreapp2.2\CentralTelefonica.csprojAssemblyReference.cache
+C:\Users\Programacion\Documents\FTorres\Llamada\obj\Debug\netcoreapp2.2\CentralTelefonica.csproj.CoreCompileInputs.cache
+C:\Users\Programacion\Documents\FTorres\Llamada\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfoInputs.cache
+C:\Users\Programacion\Documents\FTorres\Llamada\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfo.cs
+C:\Users\Programacion\Documents\FTorres\Llamada\obj\Debug\netcoreapp2.2\CentralTelefonica.dll
+C:\Users\Programacion\Documents\FTorres\Llamada\obj\Debug\netcoreapp2.2\CentralTelefonica.pdb
+C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.csprojAssemblyReference.cache
+C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.csproj.CoreCompileInputs.cache
+C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfoInputs.cache
+C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfo.cs
+C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.dll
+C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.pdb

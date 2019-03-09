@@ -477,7 +477,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.2.0": {
-      "sha512": "OK/H8p9Ig6mLMITjXJ4VOewrJg/TU+dAPHE4BdMWMv+8COzBehf7XF1+DofKkmqdHpO2cJoS5Sc9PEZ6PKCbsg==",
+      "sha512": "qIrVLupwT2NYTrf7KM7Nh+mJr36V5MITVRjyGOByVVCwGmQgQmI/6bjZYQv+QdExi4Cm87eCKJX9FdT6nc00Xg==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.2.0",
       "files": [
@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\programacion\\.nuget\\packages\\": {},
+    "C:\\Users\\Programacion\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\programacion\\Documents\\CentralTelefonica-master\\CentralTelefonica.csproj",
+      "projectUniqueName": "C:\\Users\\Programacion\\Documents\\FTorres\\CentralTelefonica\\CentralTelefonica.csproj",
       "projectName": "CentralTelefonica",
-      "projectPath": "C:\\Users\\programacion\\Documents\\CentralTelefonica-master\\CentralTelefonica.csproj",
-      "packagesPath": "C:\\Users\\programacion\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\programacion\\Documents\\CentralTelefonica-master\\obj\\",
+      "projectPath": "C:\\Users\\Programacion\\Documents\\FTorres\\CentralTelefonica\\CentralTelefonica.csproj",
+      "packagesPath": "C:\\Users\\Programacion\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Programacion\\Documents\\FTorres\\CentralTelefonica\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\programacion\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Programacion\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

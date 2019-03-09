@@ -1,8 +1,10 @@
-using system;
-using static system.console;
-using CentralTelefonica_master.Entidades;
-using system.collections.Generic;
-namespace CentralTelefonica_master.App
+using System;
+using static System.Console;
+using CentralTelefonica.Entidades;
+using System.Collections.Generic;
+using CentralTelefonica.Util;
+
+namespace CentralTelefonica.App
 {
     public class MenuPrincipal
     {
@@ -12,22 +14,34 @@ namespace CentralTelefonica_master.App
         public List<Llamada> ListaDeLlamadas{get; set;}   //crear una lista para objetos del tipo "Llamada"
         public void MostrarMenu()
         {
-            var opcion = 0;
+            int opcion = 100;
             do
             {
-                Writeline("1. Registrar llamada local");
-                Writeline("2. Registrar llamada departamental");
-                Writeline("3. Costo total de llamada local");
-                Writeline("4. Costo total de la llamada departamental");
-                Writeline("5. Costo total de llamadas");
-                Writeline("0. Salir");
-                Writeline("Ingrese su opcion ==>");
-                string valor = ReadLine();
-                opcion = Convert.ToInt16(valor);
-                if(opcion == 1){
-                    RegistrarLlamada(opcion);
+                try 
+                {
+                    WriteLine("1. Registrar llamada local");
+                    WriteLine("2. Registrar llamada departamental");
+                    WriteLine("3. Costo total de llamada local");
+                    WriteLine("4. Costo total de la llamada departamental");
+                    WriteLine("5. Costo total de llamadas");
+                    WriteLine("6. Mostrar registros de llamadas");
+                    WriteLine("0. Salir");
+                    WriteLine("Ingrese su opcion ==>");
+                    string valor = ReadLine();
+                    opcion = Convert.ToInt16(valor);
+                    if(opcion == 1){
+                        RegistrarLlamada(opcion);                  
+                    }else if(opcion == 6)
+                    {
+                        mostrarDetalleDoWhile();  //Ejecuta metodo del ciclo
+                    }
+                }
+                catch (OpcionMenuException e)
+                {
+                    throw new OpcionMenuException();
                 }
             } while (opcion != 0);
+
         }
         public void RegistrarLlamada(int opcion)
         {
@@ -35,11 +49,11 @@ namespace CentralTelefonica_master.App
             string numeroDestino= "";
             string duracion = "";
             Llamada llamada = null;
-            Writeline("Ingrese el numero de origen:");
+            WriteLine("Ingrese el numero de origen:");
             numeroOrigen = ReadLine();
-            Writeline("Ingrese el numero de destino:");
+            WriteLine("Ingrese el numero de destino:");
             numeroDestino = ReadLine();
-            Writeline("Duracion de la llamada:");
+            WriteLine("Duracion de la llamada:");
             duracion = ReadLine();
             if (opcion == 1){
                 /* // Como asignar parametros a una clase sin constructor: 
@@ -53,17 +67,48 @@ namespace CentralTelefonica_master.App
                 ((LlamadaLocal)llamada).Precio = precioLocal;
             }else if(opcion == 2){
                 llamada = new LlamadaDepartamental(numeroOrigen, numeroDestino,Convert.ToDouble(duracion));
-                llamada.NumeroDestino = numeroDestino;
+                /*llamada.NumeroDestino = numeroDestino;
                 llamada.NumeroOrigen = numeroOrigen;
-                llamada.Duracion = Convert.ToDouble(duracion);
+                llamada.Duracion = Convert.ToDouble(duracion);*/
                 ((LlamadaDepartamental)llamada).PrecioUno = precioUnoDepartamental;
                 ((LlamadaDepartamental)llamada).PrecioDos = precioDosDepartamental;
                 ((LlamadaDepartamental)llamada).PrecioTres = precioTresDepartamental;
-                ((LlamadaDepartamental)llamada).Franja = 0
+                ((LlamadaDepartamental)llamada).Franja = 0;
             }else {
-                Writeline("Tipo de llamada no registrado")
+                WriteLine("Tipo de llamada no registrado");
             }
+            this.ListaDeLlamadas.Add(llamada);
+        }
 
+        public void mostrarDetalleWhile(){
+            int i = 0;
+            while(this.ListaDeLlamadas.Count > i){
+                WriteLine(this.ListaDeLlamadas[i]);
+                i = i +1;
+            }
+            //while(++){}   
+        }
+
+        public void mostrarDetalleDoWhile(){
+            int i = 0;
+            do {
+                WriteLine(this.ListaDeLlamadas[i]);
+                 i++;
+            }while(this.ListaDeLlamadas.Count > i);
+        }
+
+        public void MostrarDetallleFor(){
+            for(int i = 0; i < this.ListaDeLlamadas.Count; i++)
+            {
+                WriteLine(this.ListaDeLlamadas[i]);
+            }
+        }
+
+        public void MostrarDetalleForEach(){
+            foreach (var llamada in this.ListaDeLlamadas)
+            {
+                WriteLine(llamada);
+            }
         }
     }
 }

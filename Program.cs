@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 using System.Collections.Generic;
 using CentralTelefonica.Entidades;
 using CentralTelefonica.App;
@@ -9,17 +10,21 @@ namespace CentralTelefonica
     {
         static void Main(string[] args)
         {
-            try
+            /*try
             {
                 MenuPrincipal menu = new MenuPrincipal();
                 menu.MostrarMenu();
             }
-            catch (System.Exception)
+
+            catch(OpcionMenuException e)
             {
-                
-                throw;
-            }
-           
+                Console.WriteLine(e.Message);
+            } */
+            DateTime fecha = DateTime.Now;
+
+            WriteLine(fecha.DayOfWeek);
+            WriteLine($"{fecha.Hour}:{fecha.Minute}");
+            WriteLine(fecha.Day);    
         }
     }
 }

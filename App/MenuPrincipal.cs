@@ -9,7 +9,7 @@ namespace CentralTelefonica.App {
         private const float precioUnoDepartamental = 0.65f;
         private const float precioDosDepartamental = 0.85f;
         private const float precioTresDepartamental = 0.98f;
-        private const float precioLocal = 0.49f;
+        private const float precioLocal = 1.25f;
         public List<Llamada> ListaDeLlamadas { get; set; } //crear una lista para objetos del tipo "Llamada"
         public MenuPrincipal () {
             this.ListaDeLlamadas = new List<Llamada> ();
@@ -27,20 +27,38 @@ namespace CentralTelefonica.App {
                     WriteLine ("0. Salir");
                     WriteLine ("Ingrese su opcion ==>");
                     string valor = ReadLine ();
-                    opcion = Convert.ToInt16 (valor);
+                    if (EsNumero(valor) == true){
+                        opcion = Convert.ToInt16 (valor);
+                    }
                     if (opcion == 1) {
                         RegistrarLlamada (opcion);
                     } else if (opcion == 6) {
-                        MostrarDetalleDoWhile (); //Ejecuta metodo del ciclo
+                        MostrarDetalleForEach (); //Ejecuta metodo del ciclo
                     } else if (opcion == 2) {
                         RegistrarLlamada (opcion);
+                    } else if (opcion == 3) {
+                        MostrarCostoLlamadasLocales();
+                    } else if (opcion == 4) {
+                        MostrarCostoLlamadaDepartamental();
                     }
                 } catch (OpcionMenuException e) {
-                    throw new OpcionMenuException ();
+                    WriteLine(e.Message);
                 }
             } while (opcion != 0);
-
         }
+
+        public Boolean EsNumero(string valor) {
+            Boolean resultado = false;
+            try {
+                int numero = Convert.ToInt16(valor);
+                resultado = true;
+            } catch(Exception e) {
+                throw new OpcionMenuException();
+            }
+            return resultado;
+        }
+
+
         public void RegistrarLlamada (int opcion) {
             string numeroOrigen = "";
             string numeroDestino = "";
@@ -70,7 +88,7 @@ namespace CentralTelefonica.App {
                 ((LlamadaDepartamental) llamada).PrecioUno = precioUnoDepartamental;
                 ((LlamadaDepartamental) llamada).PrecioDos = precioDosDepartamental;
                 ((LlamadaDepartamental) llamada).PrecioTres = precioTresDepartamental;
-                ((LlamadaDepartamental) llamada).Franja = 0;
+                ((LlamadaDepartamental) llamada).Franja = calcularFranja(DateTime.Now);
             } else {
                 WriteLine ("Tipo de llamada no registrado");
             }
@@ -104,6 +122,75 @@ namespace CentralTelefonica.App {
             foreach (var llamada in this.ListaDeLlamadas) {
                 WriteLine (llamada);
             }
+            WriteLine("\n");
         }
+
+        public void MostrarCostoLlamadasLocales(){
+            double tiempoLlamada = 0.0;
+            double costoTotal = 0.0;
+            foreach(var elemento in ListaDeLlamadas) {
+
+                if(elemento.GetType() == typeof(LlamadaLocal)){
+                    tiempoLlamada += elemento.Duracion;
+                    costoTotal +=  elemento.CalcularPrecio();
+                }
+            }
+            WriteLine($"Costo minuto: {precioLocal}");
+            WriteLine($"Tiempo total de llamadas: {tiempoLlamada}");
+            WriteLine($"Costo total: {costoTotal} \n");
+        }
+
+        public void MostrarCostoLlamadaDepartamental(){
+            double tiempoLlamadaFranja1 = 0.0;
+            double tiempoLlamadaFranja2 = 0.0;
+            double tiempoLlamadaFranja3 = 0.0;
+            double costoTotalFranja1 = 0.0;
+            double costoTotalFranja2 = 0.0;
+            double costoTotalFranja3 = 0.0;
+            foreach(var elemento in ListaDeLlamadas) { 
+                if(elemento.GetType() == typeof(LlamadaDepartamental)){
+                    switch (((LlamadaDepartamental)elemento).Franja)
+                    {
+                        case 0:
+                            tiempoLlamadaFranja1 += elemento.Duracion;
+                            costoTotalFranja1 +=  elemento.CalcularPrecio();
+                            break;
+                        case 1:
+                            tiempoLlamadaFranja2 += elemento.Duracion;
+                            costoTotalFranja2 +=  elemento.CalcularPrecio();
+                            break;
+                        case 2:
+                            tiempoLlamadaFranja3 += elemento.Duracion;
+                            costoTotalFranja3 +=  elemento.CalcularPrecio();
+                            break;
+                    }    
+                }
+            }
+            WriteLine("FRANJA 1");
+            WriteLine($"Costo minuto: {precioUnoDepartamental}");
+            WriteLine($"Tiempo total de llamadas: {tiempoLlamadaFranja1}");
+            WriteLine($"Costo total: {costoTotalFranja1} \n");
+
+            WriteLine("FRANJA 2");
+            WriteLine($"Costo minuto: {precioDosDepartamental}");
+            WriteLine($"Tiempo total de llamadas: {tiempoLlamadaFranja2}");
+            WriteLine($"Costo total: {costoTotalFranja2} \n");
+
+            WriteLine("FRANJA 1");
+            WriteLine($"Costo minuto: {precioTresDepartamental}");
+            WriteLine($"Tiempo total de llamadas: {tiempoLlamadaFranja3}");
+            WriteLine($"Costo total: {costoTotalFranja3} \n");
+        }
+
+        public int calcularFranja(DateTime fecha){
+            int resultado = -1;
+               /*   Franja 0:  Lunes 6:00 a Viernes 21:59
+                    Franja 1:  Lunes 22:00 a Viernes 5:59
+                    Franja 2:  Viernes 22:00 a Lunes 5:59
+                */
+
+            return resultado; //0,1,2
+        }
+
     }
 }

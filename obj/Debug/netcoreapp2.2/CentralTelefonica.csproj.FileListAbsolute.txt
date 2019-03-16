@@ -32,3 +32,14 @@ C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.
 C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfo.cs
 C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.dll
 C:\Users\Programacion\Documents\FTorres\CentralTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.pdb
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.csprojAssemblyReference.cache
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.csproj.CoreCompileInputs.cache
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfoInputs.cache
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.AssemblyInfo.cs
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.dll
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\obj\Debug\netcoreapp2.2\CentralTelefonica.pdb
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\bin\Debug\netcoreapp2.2\CentralTelefonica.deps.json
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\bin\Debug\netcoreapp2.2\CentralTelefonica.runtimeconfig.json
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\bin\Debug\netcoreapp2.2\CentralTelefonica.runtimeconfig.dev.json
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\bin\Debug\netcoreapp2.2\CentralTelefonica.dll
+D:\Felipe\Documents\CursoKinal\RepoTelefonica\RepoTelefonica\bin\Debug\netcoreapp2.2\CentralTelefonica.pdb
